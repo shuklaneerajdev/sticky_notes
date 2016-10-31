@@ -1,0 +1,17 @@
+<br>
+    <% @notes.each do |note| %>
+      <div class="draggable">
+        <div class="noteitem">
+          <%= note.content %> <br>
+          <br>
+          <div class="links">
+            <%= link_to 'Edit', edit_note_path(note) %><br>
+            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+          </div>
+        </div>
+      </div>
+      <br>
+    <% end %>
+<br>
+
+<%= link_to 'New Note', new_note_path %>
